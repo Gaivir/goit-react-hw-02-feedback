@@ -1,0 +1,15 @@
+.text {
+  margin: 10px;
+}
+.statistics {
+  display: flex;
+  flex-direction: column;
+}
+.button {
+  margin: 5px;
+}
+.general {
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
