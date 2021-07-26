@@ -5,15 +5,28 @@ class Buttons extends React.Component {
     state = {
         good: 0,
         bad: 0,
-        nautral:0,
-    }
+        neutral: 0,
+    };
 
     handleIncrement = () => {
-        this.setState({
-            good: this.state.good+1,
-        });
+        this.setState((prevState) => ({
+            good: prevState.good + 1
+        }));
         
-    }
+    };
+
+    totalIncrement = () => {
+        // деструктиризуємо елементи обєкту 
+        const { good, neutral, bad } = this.state;
+        return good + neutral + bad;
+        // return this.state.good + this.state.bad + this.state.nautral;
+    };
+
+    positiveFeedback = () => {
+        const { good, neutral, bad } = this.state;
+        // Процентове співвідношення елементів
+        return Math.floor((good * 100) / (good + bad + neutral))
+    };
 
     render()
     
@@ -31,13 +44,13 @@ class Buttons extends React.Component {
                     <span className={style.text}>Good: {this.state.good}</span>
                 <span className={style.text}>Neutral: {this.state.neutral}</span>
                 <span className={style.text}>Bad: {this.state.bad}</span>
-                <span className={style.text}>Total: 0</span>
-                <span className={style.text}>Positive feedback: 0</span>
+                    <span className={style.text}>Total: {this.totalIncrement}</span>
+                    <span className={style.text}>Positive feedback: {this.positiveFeedback}%</span>
             </div>
         </div>
             
         )
         
-    }
+    };
 }
 export default Buttons;
