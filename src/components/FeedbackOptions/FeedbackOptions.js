@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import styles from './FeedbackOptions.module.css';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => (
-    <div className={styles.div}>
+  <div className={styles.div}>
+    {/* Звернути УВАГУ!!!!! Мепаєм ключі обєкту */}
            {Object.keys(options).map(value => (
                <button
                    type='button'

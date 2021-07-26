@@ -44,8 +44,8 @@ class Buttons extends React.Component {
                     <span className={style.text}>Good: {this.state.good}</span>
                 <span className={style.text}>Neutral: {this.state.neutral}</span>
                 <span className={style.text}>Bad: {this.state.bad}</span>
-                    <span className={style.text}>Total: {this.totalIncrement}</span>
-                    <span className={style.text}>Positive feedback: {this.positiveFeedback}%</span>
+                    <span className={style.text}>Total: {this.totalIncrement()}</span>
+                    <span className={style.text}>Positive feedback: {this.positiveFeedback()}%</span>
             </div>
         </div>
             
